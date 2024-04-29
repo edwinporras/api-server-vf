@@ -1,8 +1,8 @@
 //ACA VA TODAS LAS INTERACIONES CON LA BD
-import { getConnection } from "../../databases/database";
+import { getConnectionCharacters } from "../../databases/characters/characters.db";
 const getCharacters = async(req, res) => {
     try {
-        const connection = await getConnection(); 
+        const connection = await getConnectionCharacters(); 
         const result = await connection.query("SELECT * FROM characters");
         res.json(result)
     } catch (error) {
